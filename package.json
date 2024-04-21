@@ -1,0 +1,20 @@
+{
+  "name": "logocreator",
+  "version": "1.0.0",
+  "description": "An even challenge, so i don`t have a starter code, but i need to create a javascript file that will generate a logo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "install": "^0.13.0",
+    "npm": "^10.5.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
