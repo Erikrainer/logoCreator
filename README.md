@@ -41,8 +41,7 @@
 
   ![Screenshot 2024-04-22 103641](https://github.com/Erikrainer/logoCreator/assets/160955635/3b881866-2a54-4019-8dd6-8b81d533989d)
 
-  ![Screenshot 2024-04-22 103700](https://github.com/Erikrainer/logoCreator/assets/160955635/784bc805-2670-4937-8b78-a15d8f92428a)
-
+  ![Screenshot 2024-04-22 130129](https://github.com/Erikrainer/logoCreator/assets/160955635/c28a2d1d-1fbb-4006-a7a6-db27760ba096)
 
   ## License 📛 
 
