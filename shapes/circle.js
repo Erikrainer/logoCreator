@@ -1,7 +1,7 @@
 const BaseLogo = require("../logics/BaseLogo");
 
 // Define CircleShape class extending BaseLogo
-class CircleShape extends BaseLogo {
+class Circle extends BaseLogo {
     constructor() {
         super();
     }
@@ -15,4 +15,4 @@ class CircleShape extends BaseLogo {
     }
 }
 
-module.exports = CircleShape;
+module.exports = Circle;

@@ -2,9 +2,9 @@
 const { writeFile } = require('fs').promises;
 const BaseLogo = require("./logics/BaseLogo");
 const promptUser = require("./logics/promptUser"); // Import the user input function
-const CircleShape = require("./shapes/circle");
-const SquareShape = require("./shapes/square");
-const triangleShape = require("./shapes/triangle");
+const Circle = require("./shapes/circle");
+const Square = require("./shapes/square");
+const Triangle = require("./shapes/triangle");
 
 // Define the baseLogo class extending BaseLogo
 class baseLogo extends BaseLogo {
@@ -27,11 +27,11 @@ class baseLogo extends BaseLogo {
     // Function to select the appropriate shape class
     shapeSelector(shape){
         if(shape === "Circle"){
-            return new CircleShape();
+            return new Circle();
         } else if(shape === "Square"){
-            return new SquareShape();
+            return new Square();
         } else {
-            return new triangleShape();
+            return new Triangle();
         }
     }
 }

@@ -1,19 +1,19 @@
 // Import the parent class
-const CircleShape = require("../shapes/circle");//Importing the CircleShape class from the file
-const SquareShape = require("../shapes/square");//Importing the SquareShape class from the file
-const TriangleShape = require("../shapes/triangle");//Importing the TriangleShape class from the file
+const Circle = require("../shapes/circle");//Importing the Circle class from the file
+const Square = require("../shapes/square");//Importing the Square class from the file
+const Triangle = require("../shapes/triangle");//Importing the Triangle class from the file
 
 // Create a new instance of the BaseLogo class
 
-const circleShape = new CircleShape();
-const squareShape = new SquareShape();
-const triangleShape = new TriangleShape();
+const circle = new Circle();
+const square = new Square();
+const triangle = new Triangle();
 
-// Test case for triangleShape method
+// Test case for Triangle class
 describe("Triangle Test", () => {
-    it('Test triangleShape method', () => {
-    // Call the triangleShape method with sample parameters
-    const triangleFunctionTest = triangleShape.generateSvg("TestName", "blue", "red");
+    it('Test Triangle class', () => {
+    // Call the triangle class with sample parameters
+    const triangleFunctionTest = triangle.generateSvg("TestName", "blue", "red");
 
     // Define the expected output
     const triangleOutputExpected = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
@@ -30,11 +30,11 @@ describe("Triangle Test", () => {
 });
 })
 
-// Test case for circleShape method
+// Test case for Circle class
 describe("Circle Test", () => {
-    it('Test circleShape method', () => {
-    // Call the circleShape method with sample parameters
-    const circleFunctionTest = circleShape.generateSvg("TestName", "blue", "red");
+    it('Test Circle class', () => {
+    // Call the circle class with sample parameters
+    const circleFunctionTest = circle.generateSvg("TestName", "blue", "red");
 
     // Define the expected output
     const circleOutputExpected = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
@@ -51,11 +51,11 @@ describe("Circle Test", () => {
 });
 })
 
-// Test case for squareShape method
+// Test case for Square class
 describe("Square Test", () => {
-it('Test squareShape method', () => {
-    // Call the squareShape method with sample parameters
-    const squareFunctionTest = squareShape.generateSvg("TestName", "blue", "red");
+it('Test Square class', () => {
+    // Call the Square class with sample parameters
+    const squareFunctionTest = square.generateSvg("TestName", "blue", "red");
 
     // Define the expected output
     const squareOutputExpected = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">

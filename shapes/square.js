@@ -1,6 +1,6 @@
 const BaseLogo = require("../logics/BaseLogo");
 
-class SquareShape extends BaseLogo {
+class Square extends BaseLogo {
     constructor() {
         super();
     }
@@ -15,4 +15,4 @@ class SquareShape extends BaseLogo {
 }
 
 
-module.exports = SquareShape;
+module.exports = Square;
