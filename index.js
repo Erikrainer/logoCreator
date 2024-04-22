@@ -1,94 +1,69 @@
-const inquirer = require("inquirer");
-
+// Import necessary modules
 const { writeFile } = require('fs').promises;
-
 const BaseLogo = require("./BaseLogo");
+const promptUser = require("./promptUser"); // Import the user input function
 
-function validateColor(input) {
-
-    const hexRegex = /^#?([0-9A-F]{3}){1,2}$/i;
-
-    const colorKeywords = ['blue', 'red', 'green', 'yellow', 'purple', 'orange', 'white'];
-
-    if (hexRegex.test(input) || colorKeywords.includes(input.toLowerCase())) {
-        return true;
-    } else {
-        return "Please enter a valid color keyword or hexadecimal color code.";
-    }
-}
-
-
-const promptUser = () => {
-    return inquirer.prompt([
-        {
-            type: 'maxlength-input',
-            name: 'name',
-            message: 'What is the name for the logo(max 3 characters)',
-            maxLength: 3
-          },
-          {
-          type: 'input',
-          name: 'nameColor',
-          message: 'Choose the text color(keyword or hexadecimal)',
-          validate: validateColor
-          },
-          {
-            type: 'list',
-            name: 'shape',
-            message: 'Choose the shape for your logo',
-            choices: ["Circle", "Square", "Triangle"]
-          },
-          {
-            type: 'input',
-            name: 'shapeColor',
-            message: 'Choose the shape color(keyword or hexadecimal)',
-            validate: validateColor
-          },
-        ]);
-};
-
+// Define the BaseLogo class
 class baseLogo extends BaseLogo {
-    circleShape(name, nameColor, shape, shapeColor){
-        return `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
-        <circle cx="150" cy="100" r="80" fill="${shapeColor}" />
-        <text x="150" y="120" font-size="60" text-anchor="middle" fill="${nameColor}">${name}</text>
-        </svg>
-        `;
-    }
-    squareShape(name, nameColor, shape, shapeColor){
-        return `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
-        <rect x="60" y="60" width="180" height="180" fill="${shapeColor}" />
-        <text x="150" y="150" font-size="60" text-anchor="middle" fill="${nameColor}">${name}</text>
-      </svg>
-      `;
-    }
-    triangleShape(name, nameColor, shape, shapeColor){
-        return `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
-        <polygon points="150,20 260,180 40,180" fill="${shapeColor}" />
-        <text x="150" y="170" font-size="60" text-anchor="middle" fill="${nameColor}">${name}</text>
-      </svg>
-      `;
+    constructor() {
+        super();
     }
 
-    fileCreator(){
-        promptUser()
-        .then((answers) => writeFile("logo.svg", shapeSelector(answers)))
-        .then(() => console.log('Successfully wrote to logo.svg'))
-        .catch((err) => console.error(err));
+    // Function to generate SVG for circle shape
+    circleShape(name, nameColor, shape, shapeColor){
+        const circleInfo = this.circleInfo;
+        return `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+        <${circleInfo} fill="${shapeColor}" />
+        <text x="150" y="120" font-size="60" text-anchor="middle" fill="${nameColor}">${name}</text>
+        </svg>`;
+    }
+    
+    // Function to generate SVG for square shape
+    squareShape(name, nameColor, shape, shapeColor){
+        const squareInfo = this.squareInfo;
+        return `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+        <${squareInfo} fill="${shapeColor}"/>
+        <text x="150" y="150" font-size="60" text-anchor="middle" fill="${nameColor}">${name}</text>
+      </svg>`;
+    }
+    
+    // Function to generate SVG for triangle shape
+    triangleShape(name, nameColor, shape, shapeColor){
+        const triangleInfo = this.triangleInfo;
+        return `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+        <${triangleInfo} fill="${shapeColor}"/>
+        <text x="150" y="170" font-size="60" text-anchor="middle" fill="${nameColor}">${name}</text>
+      </svg>`;
+    }
+
+    // Function to create a file with the generated SVG content
+    async fileCreator(){
+        const userInput = await promptUser(); // Get user input
+        const { name, nameColor, shape, shapeColor } = userInput; // Destructure user input
+
+        const svgContent = this.shapeSelector(name, nameColor, shape, shapeColor); // Call shapeSelector with user input
+
+        await writeFile("logo.svg", svgContent); // Write SVG content to file
+        console.log('Successfully wrote to logo.svg');
     };
+
+    // Function to select the appropriate shape and generate SVG accordingly
+    shapeSelector(name, nameColor, shape, shapeColor){
+        if(shape === "Circle"){
+            return this.circleShape(name, nameColor, shape, shapeColor);
+        } else if(shape === "Square"){
+            return this.squareShape(name, nameColor, shape, shapeColor);
+        } else {
+            return this.triangleShape(name, nameColor, shape, shapeColor);
+        }
+    }
 }
 
+// Create an instance of the BaseLogo class
 const logo = new baseLogo();
 
-function shapeSelector(answers){
-    const { name, nameColor, shape, shapeColor } = answers;
-    if(answers.shape === "Circle"){
-        return logo.circleShape(name, nameColor, shape, shapeColor);
-    }else if(answers.shape === "Square"){
-        return logo.squareShape(name, nameColor, shape, shapeColor);
-    }else{
-        return logo.triangleShape(name, nameColor, shape, shapeColor)
-    }
-}
-
+// Call the fileCreator method to generate and save the logo SVG
 logo.fileCreator();
+
+// Export the BaseLogo class
+module.exports = baseLogo;
