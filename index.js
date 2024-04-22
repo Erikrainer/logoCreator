@@ -20,7 +20,7 @@ class baseLogo extends BaseLogo {
         const shapeClass = this.shapeSelector(shape);
         const shapeSvg = shapeClass.generateSvg(name, nameColor, shapeColor); // Call shapeSelector with user input
 
-        await writeFile("logo.svg", shapeSvg); // Write SVG content to file
+        await writeFile("./examples/logo.svg", shapeSvg); // Write SVG content to file
         console.log('Successfully wrote to logo.svg');
     };
 
