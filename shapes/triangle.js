@@ -1,4 +1,4 @@
-const BaseLogo = require("../BaseLogo");
+const BaseLogo = require("../logics/BaseLogo");
 
 class TriangleShape extends BaseLogo {
     constructor() {

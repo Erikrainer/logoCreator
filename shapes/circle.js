@@ -1,4 +1,4 @@
-const BaseLogo = require("../BaseLogo");
+const BaseLogo = require("../logics/BaseLogo");
 
 // Define CircleShape class extending BaseLogo
 class CircleShape extends BaseLogo {

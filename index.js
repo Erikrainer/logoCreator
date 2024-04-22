@@ -1,7 +1,7 @@
 // Import necessary modules
 const { writeFile } = require('fs').promises;
-const BaseLogo = require("./BaseLogo");
-const promptUser = require("./promptUser"); // Import the user input function
+const BaseLogo = require("./logics/BaseLogo");
+const promptUser = require("./logics/promptUser"); // Import the user input function
 const CircleShape = require("./shapes/circle");
 const SquareShape = require("./shapes/square");
 const triangleShape = require("./shapes/triangle");
