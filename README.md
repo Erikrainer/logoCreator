@@ -4,7 +4,7 @@
 
   ## Description 📝
 
-  It was create to generate a logo.svg based on your choices, you have option for name(max 3 characters), name for the color, shape(Circle, Triangle, Square) and color for the shape
+  An even challenge, so i have to do from scratch everything, i needed to create an node file that will generate an svg file based on the user choice, so the user can set a name(max 3 characters), choose a color for this name, then it will prompt a choice for the shape, that the user can select (Circle, Square or Triangle), and for the last the user just need to select the Color that will be the background, based on the user choice it will generate a svg file. For those who have more experience i have an test folder that you can use to test if the svg file generated will match the svg file desired, it should pass the 3 tests, one for circle one for square and one for triangle.
 
   ## Table of Contents 🗒
 
