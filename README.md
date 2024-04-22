@@ -60,7 +60,8 @@
   ```
   npm test
   ```
-  ![Screenshot 2024-04-22 103608](https://github.com/Erikrainer/logoCreator/assets/160955635/9bdf9adf-331f-4d71-b08b-1a18d18e7f35)
+  ![Screenshot 2024-04-22 133415](https://github.com/Erikrainer/logoCreator/assets/160955635/cf389ad0-45e7-4092-a953-e8b454a6cf58)
+
 
   ## Questions
 
