@@ -1,14 +1,19 @@
 // Import the parent class
-const BaseLogo = require('../index'); // Assuming your BaseLogo class is in a separate file
+const CircleShape = require("../shapes/circle");//Importing the CircleShape class from the file
+const SquareShape = require("../shapes/square");//Importing the SquareShape class from the file
+const TriangleShape = require("../shapes/triangle");//Importing the TriangleShape class from the file
 
 // Create a new instance of the BaseLogo class
-const logo = new BaseLogo();
+
+const circleShape = new CircleShape();
+const squareShape = new SquareShape();
+const triangleShape = new TriangleShape();
 
 // Test case for triangleShape method
 describe("Triangle Test", () => {
     it('Test triangleShape method', () => {
     // Call the triangleShape method with sample parameters
-    const triangleFunctionTest = logo.triangleShape("TestName", "blue", "triangle", "red");
+    const triangleFunctionTest = triangleShape.generateSvg("TestName", "blue", "red");
 
     // Define the expected output
     const triangleOutputExpected = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
@@ -29,7 +34,7 @@ describe("Triangle Test", () => {
 describe("Circle Test", () => {
     it('Test circleShape method', () => {
     // Call the circleShape method with sample parameters
-    const circleFunctionTest = logo.circleShape("TestName", "blue", "circle", "red");
+    const circleFunctionTest = circleShape.generateSvg("TestName", "blue", "red");
 
     // Define the expected output
     const circleOutputExpected = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
@@ -50,7 +55,7 @@ describe("Circle Test", () => {
 describe("Square Test", () => {
 it('Test squareShape method', () => {
     // Call the squareShape method with sample parameters
-    const squareFunctionTest = logo.squareShape("TestName", "blue", "square", "red");
+    const squareFunctionTest = squareShape.generateSvg("TestName", "blue", "red");
 
     // Define the expected output
     const squareOutputExpected = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">

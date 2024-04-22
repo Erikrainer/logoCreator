@@ -22,20 +22,6 @@ class BaseLogo {
         throw new Error("Impossible to create a file without a logo defined.");
     }
 
-    // Method for circle shape, throws an error as it's meant to be overridden by subclasses
-    circleShape(){
-        throw new Error("Circle shape not defined");
-    }
-
-    // Method for square shape, throws an error as it's meant to be overridden by subclasses
-    squareShape(){
-        throw new Error("Square shape not defined");
-    }
-
-    // Method for triangle shape, throws an error as it's meant to be overridden by subclasses
-    triangleShape(){
-        throw new Error("Triangle shape not defined");
-    }
 }
 
 // Export the BaseLogo class
