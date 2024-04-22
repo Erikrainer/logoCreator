@@ -5,7 +5,8 @@ const BaseLogo = require('../index'); // Assuming your BaseLogo class is in a se
 const logo = new BaseLogo();
 
 // Test case for triangleShape method
-test('Test triangleShape method', () => {
+describe("Triangle Test", () => {
+    it('Test triangleShape method', () => {
     // Call the triangleShape method with sample parameters
     const triangleFunctionTest = logo.triangleShape("TestName", "blue", "triangle", "red");
 
@@ -22,9 +23,11 @@ test('Test triangleShape method', () => {
     // Check if the rendered shape matches the expected output
     expect(triangleResultNoSpaces).toEqual(triangleOutputNoSpaces);
 });
+})
 
 // Test case for circleShape method
-test('Test circleShape method', () => {
+describe("Circle Test", () => {
+    it('Test circleShape method', () => {
     // Call the circleShape method with sample parameters
     const circleFunctionTest = logo.circleShape("TestName", "blue", "circle", "red");
 
@@ -41,9 +44,11 @@ test('Test circleShape method', () => {
     // Check if the rendered shape matches the expected output
     expect(circleResultNoSpaces).toEqual(circleOutputNoSpaces);
 });
+})
 
 // Test case for squareShape method
-test('Test squareShape method', () => {
+describe("Square Test", () => {
+it('Test squareShape method', () => {
     // Call the squareShape method with sample parameters
     const squareFunctionTest = logo.squareShape("TestName", "blue", "square", "red");
 
@@ -60,3 +65,4 @@ test('Test squareShape method', () => {
     // Check if the rendered shape matches the expected output
     expect(squareResultNoSpaces).toEqual(squareOutputNoSpaces);
 });
+})

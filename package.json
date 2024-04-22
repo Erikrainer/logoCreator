@@ -4,7 +4,8 @@
   "description": "An even challenge, so i don`t have a starter code, but i need to create a javascript file that will generate a logo.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --runInBand --detectOpenHandles --forceExit",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
